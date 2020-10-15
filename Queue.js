@@ -54,4 +54,3 @@ myQueue.dequeue();
 myQueue.dequeue();
 myQueue.dequeue();
 myQueue.dequeue();
-console.log(myQueue);

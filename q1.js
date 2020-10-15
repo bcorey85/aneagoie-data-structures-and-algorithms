@@ -1,4 +1,4 @@
-const { performance, PerformanceObserver } = require('perf_hooks');
+const { performance } = require('perf_hooks');
 
 // Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain common items
 // Ex
