@@ -236,4 +236,5 @@ const myDoubleLinkedList = new DoubleLinkedList(10);
 myDoubleLinkedList.append(5);
 myDoubleLinkedList.prepend(15);
 myDoubleLinkedList.insert(-50, 1);
+myLinkedList.remove(2);
 myDoubleLinkedList.reverse();
