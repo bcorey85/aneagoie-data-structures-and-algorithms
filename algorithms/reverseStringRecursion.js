@@ -9,4 +9,4 @@ const reverseString = string => {
 	return lastLetter + reverseString(rest);
 };
 
-console.log(reverseString('zombies and stuff are trying to kill us'));
+console.log(reverseString('reverse reverse reverse'));
