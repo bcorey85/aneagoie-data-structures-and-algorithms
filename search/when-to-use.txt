@@ -1,0 +1,17 @@
+#1. If you know a solution is not far from the root of the tree
+    Breadth first search
+
+#2. If the tree is very deep and solutions are rare.
+    Breadth first search (DFS will take a long time)
+
+#3. If the tree is very wide.
+    Depth first search (BFS will need too much memory)
+
+#4. If solutions are frequent but located deep in the tree.
+    Depth first search
+
+#5. Determining whether a path exists between two nodes.
+    Depth first search
+
+#6. Finding the shortest path.
+   Breath first search
