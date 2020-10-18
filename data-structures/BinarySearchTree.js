@@ -6,7 +6,7 @@ class Node {
 	}
 }
 
-class BinarySearchTree {
+export class BinarySearchTree {
 	constructor() {
 		this.root = null;
 	}
@@ -135,6 +135,78 @@ class BinarySearchTree {
 			}
 		}
 	}
+
+	breadthFirstSearch = () => {
+		let currentNode = this.root;
+		// tracks values
+		let list = [];
+		// tracks reference to left and right nodes on each currentNode
+		let queue = [];
+		queue.push(currentNode);
+
+		while (queue.length > 0) {
+			currentNode = queue.shift();
+			list.push(currentNode.value);
+			if (currentNode.left) {
+				queue.push(currentNode.left);
+			}
+			if (currentNode.right) {
+				queue.push(currentNode.right);
+			}
+		}
+
+		return list;
+	};
+
+	DFSInOrder = () => {
+		return traverseInOrder(this.root, []);
+	};
+
+	DFSPostOrder = () => {
+		return traversePostOrder(this.root, []);
+	};
+
+	DFSPreOrder = () => {
+		return traversePreOrder(this.root, []);
+	};
+}
+
+function traverseInOrder(node, list) {
+	if (node.left) {
+		traverseInOrder(node.left, list);
+	}
+	list.push(node.value);
+	if (node.right) {
+		traverseInOrder(node.right, list);
+	}
+
+	return list;
+}
+
+function traversePreOrder(node, list) {
+	list.push(node.value);
+	if (node.left) {
+		traversePreOrder(node.left, list);
+	}
+
+	if (node.right) {
+		traversePreOrder(node.right, list);
+	}
+
+	return list;
+}
+
+function traversePostOrder(node, list) {
+	if (node.left) {
+		traversePostOrder(node.left, list);
+	}
+
+	if (node.right) {
+		traversePostOrder(node.right, list);
+	}
+	list.push(node.value);
+
+	return list;
 }
 
 const myBinarySearchTree = new BinarySearchTree();
@@ -145,8 +217,10 @@ myBinarySearchTree.insert(1);
 myBinarySearchTree.insert(6);
 myBinarySearchTree.insert(15);
 myBinarySearchTree.insert(170);
-myBinarySearchTree.remove(170);
-console.log(myBinarySearchTree.lookup(170));
+
+console.log(myBinarySearchTree.DFSInOrder());
+console.log(myBinarySearchTree.DFSPreOrder());
+console.log(myBinarySearchTree.DFSPostOrder());
 
 function traverse(node) {
 	const tree = { value: node.value };
